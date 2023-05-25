@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
+// colors
+$purple: hsl(259, 100%, 65%);
+$light-red: hsl(0, 100%, 67%);
+$white: hsl(0, 0%, 100%);
+$off-white: hsl(0, 0%, 94%);
+$light-grey: hsl(0, 0%, 86%);
+$smokey-grey: hsl(0, 1%, 44%);
+$off-black: hsl(0, 0%, 8%);
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
+}
+
+button, label, input {
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+}
+
+body {
+  background-color: $off-white;
+}
+
+main {
+    padding: 18px;
+}
+
+.age-calculator-section {
+    margin-top: 60px;
+    padding: 46px 24px;
+    background-color: $white;
+    border-radius: 28px 28px 100px 28px;
+    box-shadow: 3px 3px 60px hsla(0, 0%, 1%, 0.01);
+    max-width: 540px;
+
+
+    .form-section {
+
+        .inputs-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            max-width: 405px;
+            
+
+            input {
+                width: 100%;
+                font-size: 1.4rem;
+                padding: 8px;
+                color: $off-black;
+                border: 1px solid $off-white;
+                border-radius: 6px;
+                transition: border-color .12s ease-in-out;
+                outline: none;
+
+                &:hover, &:focus {
+                    border-color: $purple;
+                }
+                &.invalid {
+                    border-color: $light-red;
+                }
+                &::-webkit-inner-spin-button,
+                &::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+            }
+            label {
+                letter-spacing: 2px;
+                color: $smokey-grey;
+                font-size: .78rem;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: color .12s ease-in-out;
+
+                &.invalid {
+                    color: $light-red;
+                }
+            }
+
+            .error {
+                color: $light-red;
+                font-weight: 400;
+                font-style: italic;
+                font-size: .64rem;
+                margin-top: 6px;
+                min-height: 36px;
+            }
+        }
+        .button-section {
+            margin-top: 8px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            
+            button {
+                height: 62px;
+                width: 62px;
+                border: none;
+                border-radius: 50%;
+                background-color: $purple;
+                transition: background-color .12s ease-in-out;
+                cursor: pointer;
+                z-index: 3;
+
+                &:focus, &:hover {
+                    background-color: $off-black;
+                }
+
+                img {
+                    height: 24px;
+                }
+            }
+
+            &::before {
+                content: '';
+                height: 2px;
+                width: 100%;
+                background-color: $off-white;
+                z-index: 2;
+                top: 30px;
+                left: 0;
+                position: absolute;
+            }
+        }
+    }
+    .result-section {
+        margin-top: 30px;
+        overflow: hidden;
+        p {
+            font-size: 3.1rem;
+            font-weight: 800;
+            font-style: italic;
+            color: $off-black;
+            background-color: $white;
+
+            span {
+                color: $purple;
+            }
+        }
+
+        &.change-anim {
+            animation: 1s resultChangeAnim;
+        }
+    }
+}
+
+@media (min-width: 470px) {
+    .age-calculator-section {
+        margin: 60px auto;
+        padding: 40px;
+        .form-section {
+            .button-section {
+                justify-content: flex-end;
+            }
+        }
+        .result-section {
+            p {
+                font-size: 4.5rem;
+            }
+        }
+    }
+}
+
+@keyframes resultChangeAnim {
+    0% {
+        opacity: 1;
+    }
+    33%, 66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; 
+    }
+}

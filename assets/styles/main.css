@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
+}
+
+button, label, input {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+}
+
+body {
+  background-color: hsl(0, 0%, 94%);
+}
+
+main {
+  padding: 18px;
+}
+
+.age-calculator-section {
+  margin-top: 60px;
+  padding: 46px 24px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 28px 28px 100px 28px;
+  box-shadow: 3px 3px 60px hsla(0, 0%, 1%, 0.01);
+  max-width: 540px;
+}
+.age-calculator-section .form-section .inputs-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 405px;
+}
+.age-calculator-section .form-section .inputs-section input {
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 8px;
+  color: hsl(0, 0%, 8%);
+  border: 1px solid hsl(0, 0%, 94%);
+  border-radius: 6px;
+  transition: border-color 0.12s ease-in-out;
+  outline: none;
+}
+.age-calculator-section .form-section .inputs-section input:hover, .age-calculator-section .form-section .inputs-section input:focus {
+  border-color: hsl(259, 100%, 65%);
+}
+.age-calculator-section .form-section .inputs-section input.invalid {
+  border-color: hsl(0, 100%, 67%);
+}
+.age-calculator-section .form-section .inputs-section input::-webkit-inner-spin-button, .age-calculator-section .form-section .inputs-section input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.age-calculator-section .form-section .inputs-section label {
+  letter-spacing: 2px;
+  color: hsl(0, 1%, 44%);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.12s ease-in-out;
+}
+.age-calculator-section .form-section .inputs-section label.invalid {
+  color: hsl(0, 100%, 67%);
+}
+.age-calculator-section .form-section .inputs-section .error {
+  color: hsl(0, 100%, 67%);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.64rem;
+  margin-top: 6px;
+  min-height: 36px;
+}
+.age-calculator-section .form-section .button-section {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.age-calculator-section .form-section .button-section button {
+  height: 62px;
+  width: 62px;
+  border: none;
+  border-radius: 50%;
+  background-color: hsl(259, 100%, 65%);
+  transition: background-color 0.12s ease-in-out;
+  cursor: pointer;
+  z-index: 3;
+}
+.age-calculator-section .form-section .button-section button:focus, .age-calculator-section .form-section .button-section button:hover {
+  background-color: hsl(0, 0%, 8%);
+}
+.age-calculator-section .form-section .button-section button img {
+  height: 24px;
+}
+.age-calculator-section .form-section .button-section::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: hsl(0, 0%, 94%);
+  z-index: 2;
+  top: 30px;
+  left: 0;
+  position: absolute;
+}
+.age-calculator-section .result-section {
+  margin-top: 30px;
+  overflow: hidden;
+}
+.age-calculator-section .result-section p {
+  font-size: 3.1rem;
+  font-weight: 800;
+  font-style: italic;
+  color: hsl(0, 0%, 8%);
+  background-color: hsl(0, 0%, 100%);
+}
+.age-calculator-section .result-section p span {
+  color: hsl(259, 100%, 65%);
+}
+.age-calculator-section .result-section.change-anim {
+  animation: 1s resultChangeAnim;
+}
+
+@media (min-width: 470px) {
+  .age-calculator-section {
+    margin: 60px auto;
+    padding: 40px;
+  }
+  .age-calculator-section .form-section .button-section {
+    justify-content: flex-end;
+  }
+  .age-calculator-section .result-section p {
+    font-size: 4.5rem;
+  }
+}
+@keyframes resultChangeAnim {
+  0% {
+    opacity: 1;
+  }
+  33%, 66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=main.css.map */

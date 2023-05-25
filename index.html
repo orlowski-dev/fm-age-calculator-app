@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Frontend Mentor | Age calculator app</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="age-calculator-section">
+            <section class="form-section">
+                <form id="calc-form">
+                    <section class="inputs-section">
+                        <div>
+                            <label for="input--day" id="label--day">Day</label>
+                            <input type="number" name="" id="input--day" placeholder="DD" autocomplete="off">
+                            <p class="error" id="error--day"></p>
+                        </div>
+                        <div>
+                            <label for="input--month" id="label--month">Month</label>
+                            <input type="number" name="" id="input--month" placeholder="MM" autocomplete="off">
+                            <p class="error" id="error--month"></p>
+                        </div>
+                        <div>
+                            <label for="input--year" id="label--year">Year</label>
+                            <input type="number" name="" id="input--year" placeholder="YYYY" autocomplete="off">
+                            <p class="error" id="error--year"></p>
+                        </div>
+                    </section>
+                    <section class="button-section">
+                        <button type="submit" id="form--button">
+                            <img src="assets/images/icon-arrow.svg" alt="icon-arrow">
+                        </button>
+                    </section>
+                </form>
+            </section>
+            <section class="result-section" id="result-section">
+                <p>
+                    <span id="result--years">--</span>
+                    years
+                </p>
+                <p>
+                    <span id="result--months">--</span>
+                    months
+                </p>
+                <p>
+                    <span id="result--days">--</span>
+                    days
+                </p>
+            </section>
+        </section>
+    </main>
+
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://www.frontendmentor.io/profile/orlowski-dev">Patryk Orłowski
+        </a>.
+    </div>
+    <script src="assets/scripts/calculator.js"></script>
+</body>
+</html>
